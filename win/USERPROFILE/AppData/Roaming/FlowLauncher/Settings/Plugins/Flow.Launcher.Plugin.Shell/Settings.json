@@ -1,0 +1,18 @@
+{
+  "Shell": 0,
+  "ReplaceWinR": true,
+  "CloseShellAfterPress": false,
+  "LeaveShellOpen": false,
+  "RunAsAdministrator": true,
+  "ShowOnlyMostUsedCMDs": false,
+  "ShowOnlyMostUsedCMDsNumber": 5,
+  "CommandHistory": {
+    "C:\\dev\\python\\amnweb_yasb\\src\\main.py": 1,
+    "pythonw C:\\dev\\python\\amnweb_yasb\\src\\main.py": 17,
+    "pythonw.exe C:\\dev\\python\\amnweb_yasb\\src\\main.py": 1,
+    "wt": 1,
+    "komorebic start --whkd": 5,
+    "startWebLogicDebugCommand.bat": 1,
+    "startWebLogicDebug.cmd": 3
+  }
+}

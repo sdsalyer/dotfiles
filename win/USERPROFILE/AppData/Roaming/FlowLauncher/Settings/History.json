@@ -1,0 +1,116 @@
+{
+  "Items": [
+    {
+      "Query": "\u003E C:\\dev\\python\\amnweb_yasb\\src\\main.py",
+      "ExecutedDateTime": "2024-07-16T17:42:19.8106673+00:00"
+    },
+    {
+      "Query": "\u003E pythonw C:\\dev\\python\\amnweb_yasb\\src\\main.py",
+      "ExecutedDateTime": "2024-07-16T17:44:04.1774143+00:00"
+    },
+    {
+      "Query": "\u003E pythonw.exe C:\\dev\\python\\amnweb_yasb\\src\\main.py",
+      "ExecutedDateTime": "2024-07-16T17:44:59.2126947+00:00"
+    },
+    {
+      "Query": "\u003E",
+      "ExecutedDateTime": "2024-07-16T18:02:36.2006942+00:00"
+    },
+    {
+      "Query": "winmerge",
+      "ExecutedDateTime": "2024-07-16T18:33:45.8241393+00:00"
+    },
+    {
+      "Query": "\u003E",
+      "ExecutedDateTime": "2024-07-17T12:32:53.2407979+00:00"
+    },
+    {
+      "Query": "alacritty",
+      "ExecutedDateTime": "2024-07-17T15:54:49.3682901+00:00"
+    },
+    {
+      "Query": "\u003E wt",
+      "ExecutedDateTime": "2024-07-18T13:17:01.7923682+00:00"
+    },
+    {
+      "Query": "\u003E  komorebic start --whkd",
+      "ExecutedDateTime": "2024-07-18T14:49:00.5150935+00:00"
+    },
+    {
+      "Query": "alac",
+      "ExecutedDateTime": "2024-07-18T15:15:35.4889717+00:00"
+    },
+    {
+      "Query": "sql",
+      "ExecutedDateTime": "2024-07-22T15:00:10.6451883+00:00"
+    },
+    {
+      "Query": "code",
+      "ExecutedDateTime": "2024-07-22T15:01:47.7774194+00:00"
+    },
+    {
+      "Query": "\u003E",
+      "ExecutedDateTime": "2024-07-22T16:14:42.5642712+00:00"
+    },
+    {
+      "Query": "ala",
+      "ExecutedDateTime": "2024-07-26T13:39:57.3881609+00:00"
+    },
+    {
+      "Query": "\u003E",
+      "ExecutedDateTime": "2024-08-02T13:24:30.7075737+00:00"
+    },
+    {
+      "Query": "sql",
+      "ExecutedDateTime": "2024-08-02T13:25:28.9551233+00:00"
+    },
+    {
+      "Query": "code",
+      "ExecutedDateTime": "2024-08-05T15:59:58.7730159+00:00"
+    },
+    {
+      "Query": "\u003E",
+      "ExecutedDateTime": "2024-08-14T19:05:03.1049396+00:00"
+    },
+    {
+      "Query": "sql",
+      "ExecutedDateTime": "2024-08-14T19:05:44.3013527+00:00"
+    },
+    {
+      "Query": "code",
+      "ExecutedDateTime": "2024-08-14T19:20:42.1832883+00:00"
+    },
+    {
+      "Query": "chro",
+      "ExecutedDateTime": "2024-08-14T19:44:27.5610511+00:00"
+    },
+    {
+      "Query": "\u003E startWebLogicDebugCommand.bat",
+      "ExecutedDateTime": "2024-08-16T19:51:35.9872768+00:00"
+    },
+    {
+      "Query": "\u003E startWebLogicDebug.cmd",
+      "ExecutedDateTime": "2024-08-16T19:54:10.6483674+00:00"
+    },
+    {
+      "Query": "\u003E start",
+      "ExecutedDateTime": "2024-08-16T19:54:47.9659055+00:00"
+    },
+    {
+      "Query": "\u003E",
+      "ExecutedDateTime": "2024-08-19T15:21:12.9958101+00:00"
+    },
+    {
+      "Query": "chrome",
+      "ExecutedDateTime": "2024-08-21T13:34:48.4206517+00:00"
+    },
+    {
+      "Query": "\u003E",
+      "ExecutedDateTime": "2024-08-21T16:46:07.9258055+00:00"
+    },
+    {
+      "Query": "vi",
+      "ExecutedDateTime": "2024-08-22T13:19:01.0756359+00:00"
+    }
+  ]
+}

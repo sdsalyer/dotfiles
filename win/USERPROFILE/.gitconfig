@@ -1,0 +1,28 @@
+[user]
+	name = spencer.salyer
+	email = spencer.salyer@associates.fema.dhs.gov
+[core]
+	editor = nvim-qt
+[init]
+	defaultbranch = main
+[alias]
+	lg1 = log --graph --abbrev-commit --abbrev=8 --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --abbrev=8 --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+	lg = lg2
+	ll = log --pretty=oneline --abbrev-commit --abbrev=8
+	last = log -1 HEAD --stat
+	stat = status -sb
+	st = stat
+	d = difftool
+[diff]
+    tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+    tool = nvimdiff
+[mergetool]
+    prompt = true
+[mergetool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"

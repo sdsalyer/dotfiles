@@ -1,0 +1,39 @@
+# General
+#
+
+# Themes from github
+import = [
+    "c:/users/ssalyer/AppData/Roaming/alacritty/themes/cyber_punk_neon.toml"
+]
+
+#working_directory = "C:/msys64/home/ssalyer"
+working_directory = "C:/dev"
+
+
+[shell]
+#program = "pwsh"
+# args = ["-l"]
+program = "c:/msys64/msys2_shell.cmd"
+args = [ "-defterm", "-here", "-no-start", "-ucrt64"]
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Medium"
+
+[window]
+decorations = "None"
+decorations_theme_variant = "Dark"
+opacity = 0.8
+
+[window.dimensions]
+columns = 0
+lines = 0
+#columns = 120
+#lines = 30
+
+[window.padding]
+x = 10
+y = 10
