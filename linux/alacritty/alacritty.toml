@@ -1,0 +1,35 @@
+#
+# General section
+#
+
+# Themes from github 
+#   - https://github.com/alacritty/alacritty-theme
+import = [
+    # dracula, solarized, tokyo-night, rose-pine, etc.
+    "~/.config/alacritty/themes/themes/tokyo-night.toml"
+    # "~/.config/alacritty/themes/themes/deep_space.toml"
+    # "~/.config/alacritty/themes/themes/cyber_punk_neon.toml"
+    # "~/.config/alacritty/themes/themes/challenger_deep.toml"
+    # "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+    # "~/.config/alacritty/themes/themes/aura.toml"
+]
+
+#
+# Additional sections
+#
+[font]
+size = 12.0
+
+[font.normal]
+#family = "FiraCode Nerd Font"
+#style = "Regular"
+family = "JetBrainsMonoNL Nerd Font"
+style = "Medium"
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 10
+y = 10
+

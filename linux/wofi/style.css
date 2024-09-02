@@ -1,0 +1,61 @@
+/*
+    wofi styles
+*/
+
+* {
+    font-family: 'JetBrains Nerd Font', monospace;
+    font-size: 28px;
+}
+
+window {
+    border: 8px solid #5f2896;
+    background-color: #333333;
+}
+
+#input {
+    border: 0;
+    border-bottom: 8px solid #5f2896;
+    background-color: #555555;
+    border-radius: 0;
+    padding: .4em;
+}
+
+#input image {
+    border: none;
+}
+
+#inner-box {
+    margin: 10px;
+}
+
+#outer-box {
+    margin: 8px;
+}
+
+#scroll {
+    margin: 5px 0px;
+    color: #ccc;
+}
+
+#scroll label {
+    margin: 2px 0px;
+}
+
+/*
+#entry:nth-child(even){
+	background-color: #3d3d3d;
+}
+*/
+
+#entry:selected {
+    color: black;
+}
+
+#text {
+    border: 0px;
+}
+
+#img {
+    padding: .4em;
+    margin-right: 1em;
+}

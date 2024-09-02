@@ -1,0 +1,40 @@
+#
+# wofi config for clipboard history
+#
+
+#
+# Run options
+#
+# mode can be drun (Desktop Run), run (from $PATH), or dmenu (for i/o)
+mode=dmenu
+
+# overlay allows for menu to display on top of fullscreen apps
+layer=overlay
+
+# placeholder text
+#prompt=you phmell loik cheez
+prompt=cliphist...
+
+# terminal to use for commands (default order is kitty, alacritty, etc.)
+term=alacritty
+
+
+#
+# Search options
+#
+insensitive=true
+filter_rate=100
+
+
+#
+# Visual options
+#
+width=800
+height=400
+
+# name of color file
+#colors=colors
+
+allow_images=true
+allow_markup=false
+no_actions=true

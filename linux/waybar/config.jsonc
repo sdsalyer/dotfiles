@@ -1,0 +1,208 @@
+// -*- mode: jsonc -*-
+// berts waybar config
+{
+    // Waybar settings ------------------------
+    "layer": "top",
+    "height": 35,  // "auto" if not supplied
+    "spacing": 4,
+
+    // Module placement -----------------------
+    "modules-left": [
+        "sway/workspaces", 
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "custom/pacman",
+        "bluetooth",
+        "backlight",
+        "pulseaudio",
+        "group/hardware",
+        //"disk#root",
+        //"disk#home",
+        "group/power",
+        //"power-profiles-daemon",
+        //"battery", 
+        "tray",
+        "clock"
+    ],
+
+    // Module groups  ------------------------
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "temperature",
+            "disk#root",
+            "disk#home",
+            "memory",
+            "cpu"
+        ]
+    },
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "battery",
+            "power-profiles-daemon",
+        ]
+    },
+
+    // Module definitions ---------------------
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": " {icon} ",
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": " ",
+            "urgent": " ",
+            //"focused": " ",
+            "default": " "
+        },
+        "tooltip": false,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "10": []
+        }
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "rewrite": {
+            "(.*) — Firefox.*": " $1"
+        }
+    },
+    
+    
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰢜  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "on-click": "~/.config/waybar/scripts/menu-power-profile.sh"
+    },
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "  {}%",
+        "max-length": 10
+    },
+    "disk#root": {
+        "interval": 30,
+        "format": "󰋊  {percentage_used}%",
+        "path": "/",
+        //"on-click": "alacritty -e btop"
+    }, 
+    "disk#home": {
+        "interval": 30,
+        "format": "󱂶  {percentage_used}%",
+        "path": "/home",
+        //"on-click": "alacritty -e btop"
+    },
+    "memory": {
+        "interval": 30,
+        "format": "   {}%",
+        "max-length": 10
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "pulseaudio": {
+        "scroll-step": 1, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        // "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": " ",
+        "format-source": "  {volume}%",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": "󱡒 ",
+            //"hands-free": "וֹ",
+            "headset": "󱡒 ",
+            "phone": "󰄜",
+            //"portable": "",
+            //"car": "",
+            "default": [" ", " ", " "]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        // "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C ",
+        "format": " {temperatureC}°C"
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 4
+    },
+
+
+    // Custom modules ------------------
+    "custom/pacman": {
+        "format": "󰮯  {}  ",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        //"on-click": "alacritty -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8
+    }
+}
