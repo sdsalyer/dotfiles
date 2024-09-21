@@ -180,8 +180,12 @@
             "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        // pactl can increase the volume above 100%, so use pamixer or wpctl
+        // "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        // "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        // invert these and scroll by 2% with a max of 100%
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%-",
     },
     "temperature": {
         // "thermal-zone": 2,
