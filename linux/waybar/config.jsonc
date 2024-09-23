@@ -184,8 +184,9 @@
         // "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
         // "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
         // invert these and scroll by 2% with a max of 100%
-        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+",
-        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%-",
+        "reverse-scrolling": true,
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%-",
     },
     "temperature": {
         // "thermal-zone": 2,
