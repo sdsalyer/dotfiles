@@ -38,3 +38,7 @@ height=400
 allow_images=true
 allow_markup=true
 no_actions=true
+
+# keybindings
+key_forward=Ctrl-n
+key_backward=Ctrl-p

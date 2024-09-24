@@ -3,8 +3,8 @@
 # set power profile using dmenu
 #
 
-current_profile=$(asusctl profile --profile-get | cut -d' ' -f 4)
-profile_arr=$(asusctl profile --list)
+current_profile=$(asusctl profile --profile-get | tail -n +2 | cut -d' ' -f 4)
+profile_arr=$(asusctl profile --list| tail -n +2)
 
 readarray -t my_array <<<"$profile_arr"
 found=

@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 #
 # start swww daemon and set initial wallpaper
 #
@@ -10,10 +10,23 @@ if [ $? -ne 0 ] ; then
 fi
 
 
-# set initial wallpaper
 #background="/home/berts/Pictures/wallpapers/animated/waneella-city.gif"
 #background="/home/berts/Pictures/wallpapers/wallhaven-5gqmg7.jpg"
-background="/home/berts/Pictures/wallpapers_ml4w/midnight-reflections-moonlit-sea.jpg"
+#background="/home/berts/Pictures/wallpapers_ml4w/midnight-reflections-moonlit-sea.jpg"
+background=0
+if [ -n "$1" ]
+then
+    background=$1
+else
+    # set a default?
+    #background=$HOME/Pictures/wallpapers/wallhaven-5gqmg7.jpg
+    echo "No wallpaper set."
+    exit 1
+fi
+
+echo "Calling swww for: $background"
+
+# set wallpaper
 xtrans="grow"
 wallTransDuration=0.4
 wallFramerate=60

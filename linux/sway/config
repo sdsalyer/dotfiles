@@ -37,6 +37,8 @@ set $cliphist cliphist list | wofi -c ~/.config/wofi/config-cliphist -s ~/.confi
 set $term alacritty
 #set $filemanager dolphin
 set $filemanager pcmanfm-qt
+set $wallpaper ~/.config/sway/swww-dmenu.sh
+
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -204,6 +206,9 @@ input "type:keyboard" {
 
     # Start file manager
     bindsym $mod+e exec $filemanager
+
+    # Change wallpaper
+    bindsym $mod+Shift+w exec $wallpaper
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
