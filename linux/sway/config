@@ -29,8 +29,9 @@ set $mod Mod4
 #set $power ~/.config/rofi/modi/power
 #set $wifi ~/.config/rofi/modi/nmcli
 set $screenshotDir ~/Pictures/screenshots
-set $screenshot grim $screenshotDir/screenshot-$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip slurp | grim -g - $screenshotDir/screenshot-$(date +"%Y-%m-%d-%H-%M-%S").png
+#set $screenshot grim $screenshotDir/screenshot-$(date +"%Y-%m-%d-%H-%M-%S").png
+#set $screenclip slurp | grim -g - $screenshotDir/screenshot-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip grim -g "$(slurp -c '#5f2896')" -t ppm - | swappy --file - --output-file $screenshotDir/screenshot-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $cliphist cliphist list | wofi -c ~/.config/wofi/config-cliphist -s ~/.config/wofi/style.cliphist.css | cliphist decode | wl-copy
 #set $background ~/Pictures/wallpapers_ml4w/sunset-mountain-beautiful.jpg
 #set $background /home/berts/Pictures/wallpapers/wallhaven-yxlwyd.jpg
