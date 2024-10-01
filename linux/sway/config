@@ -33,6 +33,8 @@ set $screenshotDir ~/Pictures/screenshots
 #set $screenclip slurp | grim -g - $screenshotDir/screenshot-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $screenclip grim -g "$(slurp -c '#5f2896')" -t ppm - | swappy --file - --output-file $screenshotDir/screenshot-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $cliphist cliphist list | wofi -c ~/.config/wofi/config-cliphist -s ~/.config/wofi/style.cliphist.css | cliphist decode | wl-copy
+set $emoji bemoji --noline
+set $colorpicker grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | wl-copy
 #set $background ~/Pictures/wallpapers_ml4w/sunset-mountain-beautiful.jpg
 #set $background /home/berts/Pictures/wallpapers/wallhaven-yxlwyd.jpg
 set $term alacritty
@@ -232,6 +234,8 @@ input "type:keyboard" {
 #
     bindsym $mod+Shift+s exec $screenclip
     bindsym $mod+v exec $cliphist
+    bindsym $mod+period exec $emoji
+    bindsym $mod+c exec $colorpicker
 
 #
 # Volume:
