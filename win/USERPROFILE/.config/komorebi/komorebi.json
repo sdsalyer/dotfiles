@@ -7,13 +7,13 @@
   "default_workspace_padding": 5,
   "default_container_padding": 10,
   "border": true,
-  "border_width": 2,
+  "border_width": 4,
   "border_offset": 0,
-  "border_colours": {
-    "single": "#5f2986",
-    "stack": "#5f2896",
-    "monocle": "#5f2896",
-    "unfocused": "#808080"
+  "theme": {
+    "palette": "Base16",
+    "name": "Darkviolet",
+    "unfocused_border": "Base01",
+    "single_border": "Base08"
   },
   "stackbar": {
     "height": 40,
