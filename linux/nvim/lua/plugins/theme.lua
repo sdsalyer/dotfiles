@@ -8,35 +8,51 @@ return {
     --     name = "catppuccin",
     --     priority = 1000,
     --     config = function()
-    --         --[[
-    --             Catppuccin theme
-    --                 - latte
-    --                 - macchiato
-    --                 - mocha
-    --                 - idk what
-    --         --]]
+    --         -- latte
+    --         -- macchiato
+    --         -- mocha
+    --         -- idk what
     --         vim.cmd.colorscheme "catppuccin-macchiato"
     --     end
     -- }
+    -- {
+    --     -- https://github.com/scottmckendry/cyberdream.nvim?tab=readme-ov-file#%EF%B8%8F-configuring
+    --     "scottmckendry/cyberdream.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require("cyberdream").setup({})
+    --         vim.cmd.colorscheme "cyberdream"
+    --     end
+    -- }
+    -- {
+    --     "RRethy/base16-nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require("base16-colorscheme")
+    --         -- .setup({})
+    --         -- .with_config({
+    --             -- telescope = true,
+    --             -- indentblankline = true,
+    --             -- notify = true,
+    --             -- ts_rainbow = true,
+    --             -- cmp = true,
+    --             -- illuminate = true,
+    --             -- dapui = true,
+    --         -- })({})
+    --         vim.cmd('colorscheme base16-gruvbox-dark-soft')
+    --     end
+    -- }
     {
-        "scottmckendry/cyberdream.nvim",
+        "tinted-theming/base16-vim",
         lazy = false,
         priority = 1000,
         config = function()
-            -- https://github.com/scottmckendry/cyberdream.nvim
-            require("cyberdream").setup({
-                transparent = true,
-                italic_comments = false,
-                -- Replace all fillchars with ' ' for the ultimate clean look
-                hide_fillchars = true,
-                borderless_telescope = true,
-                -- Set terminal colors used in `:terminal`
-                terminal_colors = true,
-            })
-
-
-            -- Lastly, tell vim to use it
-            vim.cmd.colorscheme "cyberdream"
+            vim.cmd('colorscheme base16-outrun-dark')
         end
     }
+
 }
+
+

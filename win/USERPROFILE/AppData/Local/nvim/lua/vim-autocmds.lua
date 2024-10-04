@@ -19,3 +19,18 @@ vim.api.nvim_create_autocmd("BufEnter", {
         vim.opt.formatoptions:remove({'c', 'r', 'o'})
     end
 })
+
+-- set highlight column when colorscheme changes
+vim.api.nvim_create_autocmd('ColorScheme', {
+    group = vim.api.nvim_create_augroup('colorscheme_change', {}),
+    desc = 'Change highlight column when colorscheme changes',
+    pattern = 'base16*',
+    callback = function()
+        local bgcolor = "#"..vim.g.base16_gui01
+        print("ColorScheme: " .. vim.fn.expand("<amatch>").. " | ColorColumn: " .. bgcolor)
+        vim.api.nvim_set_hl(0, "ColorColumn", {
+            bg = bgcolor
+        })
+    end,
+})
+

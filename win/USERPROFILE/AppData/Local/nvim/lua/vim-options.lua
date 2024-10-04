@@ -29,11 +29,12 @@ vim.opt.updatetime = 50
 -- draw a line at column
 vim.opt.colorcolumn = "81,121" -- ,161,241,321,401,481,561,641,721,801"
 -- hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-vim.api.nvim_set_hl(0, "ColorColumn", {
-    --fg = "#41454e",
-    bg = "#1a1c1e",
-    blend = 0,
-})
+-- this is set in plugins/theme.lua, but can override here
+-- vim.api.nvim_set_hl(0, "ColorColumn", {
+--     --fg = "#41454e",
+--     bg = "#1a1c1e",
+--     blend = 0,
+-- })
 
 -- turned this off in favor of <leader>y
 -- use system clipboard
