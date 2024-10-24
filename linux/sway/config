@@ -143,6 +143,15 @@ output DP-2 {
     position 0,0
 }
 
+# Output HDMI-A-1 'ASUSTek COMPUTER INC VP32UQ M8LMDW006543' (focused)
+output HDMI-A-1 {
+    mode 3840x2160@59.997002Hz
+    scale 1.2
+    #position -3840,0
+    position 0,0
+}
+
+
 ### Idle configuration
 #
 # Example configuration:
@@ -437,7 +446,7 @@ exec wl-paste --type image --watch cliphist store
 # clipboard store image data
 
 # Wallpaper with swww
-swaybg_command -
+#swaybg_command -
 exec_always ~/.config/sway/swww.sh
 # start swww and set in initial background
 
@@ -447,6 +456,18 @@ exec_always ~/.config/sway/swww.sh
 
 # Identify XWayland windows by their title bar (must be able to see the title bar - tabbed or stacking mode, for example)
 for_window [shell="xwayland"] title_format "[xway] %title"
+
+# Float Save As and Extension windows
+for_window [app_id="^firefox-developer-edition$" title="^(Open|Save|Extension).*$"] {
+    floating enable
+    focus
+    resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
+# keep x on workspace n
+for_window [app_id="^firefox-developer-edition$"] move container to workspace 1
+for_window [app_id="^org.gajim.Gajim$"] move container to workspace 2
 
 exec_always ~/.config/sway/waybar.sh
 
