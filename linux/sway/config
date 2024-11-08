@@ -458,12 +458,37 @@ exec_always ~/.config/sway/swww.sh
 for_window [shell="xwayland"] title_format "[xway] %title"
 
 # Float Save As and Extension windows
-for_window [app_id="^firefox-developer-edition$" title="^(Open|Save|Extension).*$"] {
+for_window [app_id="^(firefox-developer-edition|thorium-browser)$" title="^(Open|Save|Extension).*$"] {
     floating enable
     focus
     resize set width 60 ppt height 70 ppt
     border pixel 2
 }
+
+# Float pcmanfm-qt windows
+for_window [app_id="^pcmanfm-qt"] {
+    floating enable
+    focus
+    resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
+# Float Ark windows
+for_window [app_id="org.kde.ark"] {
+    floating enable
+    focus
+    resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
+# Float Save As type windows
+for_window [title="^Save.*?(As)?.*$"] {
+    floating enable
+    focus
+    resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
 
 # keep x on workspace n
 for_window [app_id="^firefox-developer-edition$"] move container to workspace 1
