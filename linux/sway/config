@@ -48,7 +48,8 @@ set $wallpaper ~/.config/sway/swww-dmenu.sh
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | wmenu | xargs swaymsg exec --
 #set $menu wofi --show run | xargs swaymsg exec --
-set $menu wofi | xargs swaymsg exec --
+#set $menu wofi | xargs swaymsg exec --
+set $menu rofi -show drun | xargs swaymsg exec --
 
 
 # Home row direction keys, like vim
@@ -76,7 +77,7 @@ client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 
 # Window borders
-default_border pixel 2
+default_border pixel 4
 default_floating_border normal
 hide_edge_borders smart
 
@@ -483,6 +484,14 @@ for_window [app_id="org.kde.ark"] {
 
 # Float Save As type windows
 for_window [title="^Save.*?(As)?.*$"] {
+    floating enable
+    focus
+    resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
+# Float pulse audio volume control
+for_window [app_id="org.pulseaudio.pavucontrol"] {
     floating enable
     focus
     resize set width 60 ppt height 70 ppt

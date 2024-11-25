@@ -1,0 +1,136 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.5+wayland3
+ **/
+* {
+    spacing:          0;
+    background-color: transparent;
+
+    /*
+        purpur: base0D -> #5f2896  ->  rgb( 95, 40, 150)
+    */
+    base00:           rgba ( 38, 50, 56, 100 % );
+    base01:           rgba ( 38, 38, 38, 85 % );
+    base03:           rgba ( 84, 110, 122, 100 % );
+    base07:           rgba ( 255, 255, 255, 100 % );
+    base0A:           rgba ( 239, 81, 16, 100% );
+    base0B:           rgba ( 195, 232, 141, 100 % );
+    base0D:           rgba ( 95, 40, 150, 100 % );
+    base0F:           rgba ( 255, 83, 112, 100 % );
+}
+window {
+    transparency:     "real";
+    background-color: var(base01);
+}
+mainbox {
+    padding:      20px 0px ;
+    border-color: var(base0D);
+    spacing:      20px ;
+    children:     [ "inputbar","message","mode-switcher","listview" ];
+    border:       8px ;
+}
+inputbar {
+    padding:  0px 30px ;
+    children: [ "prompt","textbox-prompt-colon","entry","case-indicator" ];
+}
+prompt {
+    text-color: var(base0A);
+}
+textbox-prompt-colon {
+    margin:     0px 1.0000ch 0px 0px ;
+    expand:     false;
+    /*str:        ":";*/
+    text-color: var(base0A);
+}
+entry {
+    text-color: var(base07);
+}
+case-indicator {
+    text-color: var(base0F);
+}
+mode-switcher {
+    border-color: var(base0D);
+    border:       1px 0px ;
+}
+message {
+    border-color: var(base0D);
+    border:       1px 0px ;
+}
+button {
+    padding:          5px ;
+    background-color: var(base00);
+    text-color:       var(base0F);
+}
+button selected {
+    background-color: var(base0D);
+}
+textbox {
+    padding:          5px ;
+    background-color: var(base03);
+    text-color:       var(base07);
+}
+listview {
+    margin:    0px 10px 0px 30px ;
+    scrollbar: true;
+    fixed-height: true;
+    lines: 5;
+}
+scrollbar {
+    background-color: var(base03);
+    margin:           0px 0px 0px 20px ;
+    handle-width:     10px ;
+    border-color:     var(base0D);
+    handle-color:     var(base0D);
+    border:           0px 1px ;
+}
+element {
+    padding:   5px ;
+    highlight: bold underline ;
+    spacing:   5px ;
+    children:  [ "element-icon","element-text" ];
+}
+element normal {
+    background-color: transparent;
+}
+element normal.normal {
+    text-color: var(base07);
+}
+element normal.urgent {
+    text-color: var(base0F);
+}
+element normal.active {
+    text-color: var(base0B);
+}
+element selected {
+    background-color: var(base0F);
+}
+element selected.normal {
+    text-color: var(base07);
+}
+element selected.urgent {
+    text-color: var(base0F);
+}
+element selected.active {
+    text-color: var(base0B);
+}
+element alternate.normal {
+    text-color: var(base07);
+}
+element alternate.urgent {
+    text-color: var(base0F);
+}
+element alternate.active {
+    text-color: var(base0B);
+}
+element-text {
+    background-color: inherit;
+    foreground-color: inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: inherit;
+    foreground-color: inherit;
+    text-color:       inherit;
+    size: 1.2em;
+    padding: 0 20px;
+}
