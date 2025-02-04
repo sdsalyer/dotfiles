@@ -131,14 +131,14 @@ output eDP-2 {
 # 2560 / 1.5 = 1706.666667
 # 3840 / 1.2 = 3200.0
 output DP-1 {
-    mode 3840x2160@59.997002Hz
+    mode 3840x2160@30Hz
     scale 1.2
     #position -3840,0
     position 0,0
 }
 
 output DP-2 {
-    mode 3840x2160@59.997002Hz
+    mode 3840x2160@30Hz
     scale 1.2
     #position -3840,0
     position 0,0
@@ -146,7 +146,7 @@ output DP-2 {
 
 # Output HDMI-A-1 'ASUSTek COMPUTER INC VP32UQ M8LMDW006543' (focused)
 output HDMI-A-1 {
-    mode 3840x2160@59.997002Hz
+    mode 3840x2160@30Hz
     scale 1.2
     #position -3840,0
     position 0,0

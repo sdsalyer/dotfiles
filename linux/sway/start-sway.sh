@@ -98,6 +98,14 @@ export WLR_NO_HARDWARE_CURSORS=1
 
 
 #
+# SDL stuff
+#
+# See:
+#   - https://wiki.libsdl.org/SDL2/FAQUsingSDL
+export SDL_VIDEODRIVER=wayland
+# TODO: Not sure what to do for SDL3.
+
+#
 # Misc. application stuff
 #
 #

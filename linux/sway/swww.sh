@@ -19,9 +19,9 @@ then
     background=$1
 else
     # set a default?
-    #background=$HOME/Pictures/wallpapers/wallhaven-5gqmg7.jpg
-    echo "No wallpaper set."
-    exit 1
+    background=$HOME/Pictures/wallpapers/wallhaven-2yxo29.png
+    #echo "No wallpaper set."
+    #exit 1
 fi
 
 echo "Calling swww for: $background"
