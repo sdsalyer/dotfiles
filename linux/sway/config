@@ -127,26 +127,29 @@ output eDP-2 {
 }
 
 # External: ASUSTek COMPUTER INC VP32UQ M8LMDW006543
+# these are all the same monitor, depengin which port it's plugged into...
+# the max refresh rate on this model is 60Hz.
+# at some point I had it set to 30Hz but idk why
+
 # vim calculator: insert mode -> ctrl+r then =
 # 2560 / 1.5 = 1706.666667
 # 3840 / 1.2 = 3200.0
 output DP-1 {
-    mode 3840x2160@30Hz
+    mode 3840x2160@59.940Hz
     scale 1.2
     #position -3840,0
     position 0,0
 }
 
 output DP-2 {
-    mode 3840x2160@30Hz
+    mode 3840x2160@59.940Hz
     scale 1.2
     #position -3840,0
     position 0,0
 }
 
-# Output HDMI-A-1 'ASUSTek COMPUTER INC VP32UQ M8LMDW006543' (focused)
 output HDMI-A-1 {
-    mode 3840x2160@30Hz
+    mode 3840x2160@59.940Hz
     scale 1.2
     #position -3840,0
     position 0,0
@@ -169,8 +172,9 @@ output HDMI-A-1 {
 exec swayidle -w \
          timeout 900 'swaylock -f' \
          timeout 1120 'swaymsg "output * power off"' \
+         before-sleep 'swaylock -f' \
          resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f'
+         after-resume 'swaymsg "output * power on"'
 
 
 ### Input configuration
@@ -495,6 +499,29 @@ for_window [app_id="org.pulseaudio.pavucontrol"] {
     floating enable
     focus
     resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
+# Float ROG control center
+for_window [app_id="rog-control-center"] {
+    floating enable
+    focus
+    resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
+# Float pico-8, picotron, voxatron windows
+for_window [app_id="^pico8(_dyn)?"] {
+    floating enable
+    focus
+    resize set width 780px height 780px
+    border pixel 2
+}
+for_window [app_id="^(pico|voxa)tron(_dyn)?"] {
+    floating enable
+    #fullscreen enable
+    focus
+    resize set width 970px height 550px
     border pixel 2
 }
 
