@@ -64,7 +64,7 @@
             "1": " ",
             "2": " ",
             "3": " ",
-            "4": "4",
+            "4": "󰦪 ",
             "5": "5",
             "6": "6",
             "7": "7",
@@ -131,7 +131,7 @@
     },
     "cpu": {
         "interval": 10,
-        "format": " {}%",
+        "format": " {usage}%",
         "max-length": 10
     },
     "disk#root": {
@@ -164,7 +164,7 @@
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%  {format_source}",
         // "format-bluetooth-muted": " {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
@@ -178,7 +178,7 @@
             "phone": "󰄜",
             //"portable": "",
             //"car": "",
-            "default": [" ", " ", " "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
         // pactl can increase the volume above 100%, so use pamixer or wpctl
