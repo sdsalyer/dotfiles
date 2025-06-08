@@ -226,6 +226,7 @@
         "interval": 600,
         "exec": "~/.config/waybar/scripts/check-mail.sh -q",
         "exec-if": "ping -q -c 1 google.com", // only run if online
-        "on-click": "alacritty -e 'aerc';" // open email client
+        "exec-on-event": false,               // don't run again if clicked
+        "on-click": "alacritty -e 'aerc';"    // open email client
     }
 }
