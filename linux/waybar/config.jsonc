@@ -16,6 +16,7 @@
     ],
     "modules-right": [
         "custom/pacman",
+        "custom/email",
         "bluetooth",
         "backlight",
         "pulseaudio",
@@ -127,7 +128,15 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+        "calendar": {
+            "format": {
+                "months":     "<span color='#5f2896'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weekdays":   "<span color='#5f2896'>{}</span>",
+                "today":      "<span color='#5f2896'><b><u>{}</u></b></span>"
+            }
+        },
     },
     "cpu": {
         "interval": 10,
@@ -210,5 +219,13 @@
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
         //"on-click": "alacritty -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8
+    },
+
+    "custom/email": {
+        "format": "  {}  ",
+        "interval": 600,
+        "exec": "~/.config/waybar/scripts/check-mail.sh -q",
+        "exec-if": "ping -q -c 1 google.com", // only run if online
+        "on-click": "alacritty -e 'aerc';" // open email client
     }
 }

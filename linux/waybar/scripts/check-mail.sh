@@ -2,6 +2,14 @@
 #
 # Script to check for new emails in aerc accounts
 
+# for waybar or other "count" uses, we pass in -q to make it quiet
+exec 3>&1
+if [ "$1" = "-q" ]; then
+    exec 1>/dev/null
+else 
+    exec 1>&3
+fi
+
 aerc_config=$(cat $HOME/.config/aerc/accounts.conf)
 
 if [[ -z "$aerc_config" ]]; then
@@ -125,3 +133,10 @@ if [[ ${new_messages[total]} -gt 0 ]]; then
 else
     echo "No new messages across all accounts."
 fi
+
+# turn echo back on if -q was used
+if [ "$1" = "-q" ]; then
+    exec 1>&3
+fi
+
+echo "${new_messages[total]}"
