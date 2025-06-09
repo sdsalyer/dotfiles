@@ -18,12 +18,12 @@ if [[ -z "$aerc_config" ]]; then
 fi
 
 accounts=()
-sources=()
+mailsources=()
 mailboxes=()
 pws=()
 
-# Extract username from aerc source
-get_user_from_source() {
+# Extract username from aerc mailsource
+get_user_from_mailsource() {
     local url="$1"
     local username=$(echo "$url" | sed -E 's/.*\/\/([^@]+)@.*/\1/')
     username="${username//%40/@}" # Replace %40 with @
@@ -57,9 +57,9 @@ while IFS= read -r line; do
         accounts+=("$account")
     fi
 
-    source=$(get_value_from_line "$line" "source")
-    if [[ -n "$source" ]]; then
-        sources+=("$source")
+    mailsource=$(get_value_from_line "$line" "source")
+    if [[ -n "$mailsource" ]]; then
+        mailsources+=("$mailsource")
     fi
 
     mailbox=$(get_value_from_line "$line" "default")
@@ -78,9 +78,9 @@ done <<< "$aerc_config"
 declare -A new_messages
 new_messages[total]=0
 
-for i in "${!sources[@]}"; do
+for i in "${!mailsources[@]}"; do
     account="${accounts[$i]}"
-    source="${sources[$i]}"
+    mailsource="${mailsources[$i]}"
     mailbox="${mailboxes[$i]}"
     pw_cmd="${pws[$i]}"
 
@@ -98,9 +98,9 @@ for i in "${!sources[@]}"; do
 
     echo "Checking [$(echo "$mailbox" | tr -d ' ')] of $account"
 
-    username=$(get_user_from_source "$source")
-    #echo "curl -s $source -u $username:$password -X \"EXAMINE $mailbox\" 2>&1 | grep -o '[0-9]\+\s*EXISTS' | awk '{print $1}'"
-    new_emails=$(curl $source -u $username:$password -X "EXAMINE $mailbox" 2>&1 | grep -o '[0-9]\+\s*EXISTS' | awk '{print $1}')
+    username=$(get_user_from_mailsource "$mailsource")
+    #echo "curl -s $mailsource -u $username:$password -X \"EXAMINE $mailbox\" 2>&1 | grep -o '[0-9]\+\s*EXISTS' | awk '{print $1}'"
+    new_emails=$(curl $mailsource -u $username:$password -X "EXAMINE $mailbox" 2>&1 | grep -o '[0-9]\+\s*EXISTS' | awk '{print $1}')
 
     account_key=$(sanitize_key "$account")
     if [[ -n "$new_emails" ]]; then
@@ -116,6 +116,7 @@ for i in "${!sources[@]}"; do
     fi
 done
 
+msg=""
 if [[ ${new_messages[total]} -gt 0 ]]; then
     tmp="${new_messages[total]} new emails:"
     echo "$tmp"
@@ -139,4 +140,6 @@ if [ "$1" = "-q" ]; then
     exec 1>&3
 fi
 
-echo "${new_messages[total]}"
+#echo "${new_messages[total]}"
+printf '{"text": "%s", "tooltip": "%s"}\n' "${new_messages[total]}" "$msg"
+

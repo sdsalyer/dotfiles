@@ -223,6 +223,7 @@
 
     "custom/email": {
         "format": "  {}  ",
+        "return-type": "json",
         "interval": 600,
         "exec": "~/.config/waybar/scripts/check-mail.sh -q",
         "exec-if": "ping -q -c 1 google.com", // only run if online
