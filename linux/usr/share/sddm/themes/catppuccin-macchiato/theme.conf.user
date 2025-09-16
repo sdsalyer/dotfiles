@@ -1,0 +1,7 @@
+[General]
+Font="Noto Sans"
+FontSize=9
+ClockEnabled="true"
+CustomBackground="true"
+LoginBackground="true"
+Background="backgrounds/wall.jpg"
