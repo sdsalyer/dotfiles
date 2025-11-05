@@ -1,0 +1,9 @@
+// -*- mode: jsonc -*-
+
+// Tray module
+{
+    "tray": {
+        "icon-size": 20,
+        "spacing": 4
+    },
+}

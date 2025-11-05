@@ -1,0 +1,51 @@
+// -*- mode: jsonc -*-
+
+// Hardware module group
+{
+    // Module groups  ------------------------
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "temperature",
+            "disk#root",
+            "disk#home",
+            "memory",
+            "cpu"
+        ]
+    },
+
+    // Module definitions ---------------------
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10
+    },
+    "disk#root": {
+        "interval": 30,
+        "format": "󰋊  {percentage_used}%",
+        "path": "/",
+        //"on-click": "alacritty -e btop"
+    }, 
+    "disk#home": {
+        "interval": 30,
+        "format": "󱂶  {percentage_used}%",
+        "path": "/home",
+        //"on-click": "alacritty -e btop"
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 8
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        // "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C ",
+        "format": " {temperatureC}°C"
+    },
+}

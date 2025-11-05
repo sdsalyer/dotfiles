@@ -1,0 +1,32 @@
+// -*- mode: jsonc -*-
+
+// Pulseaudio module
+{
+    "pulseaudio": {
+        "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        // "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": " ",
+        "format-source": "  {volume}%",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": "󱡒 ",
+            //"hands-free": "וֹ",
+            "headset": "󱡒 ",
+            "phone": "󰄜",
+            //"portable": "",
+            //"car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        // pactl can increase the volume above 100%, so use pamixer or wpctl
+        // "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        // "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        // invert these and scroll by 2% with a max of 100%
+        "reverse-scrolling": true,
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%-",
+    },
+}

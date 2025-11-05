@@ -99,8 +99,11 @@ for i in "${!mailsources[@]}"; do
     echo "Checking [$(echo "$mailbox" | tr -d ' ')] of $account"
 
     username=$(get_user_from_mailsource "$mailsource")
-    #echo "curl -s $mailsource -u $username:$password -X \"EXAMINE $mailbox\" 2>&1 | grep -o '[0-9]\+\s*EXISTS' | awk '{print $1}'"
-    new_emails=$(curl $mailsource -u $username:$password -X "EXAMINE $mailbox" 2>&1 | grep -o '[0-9]\+\s*EXISTS' | awk '{print $1}')
+
+    # EXISTS will show any mails in inbox, seen or unseen.
+    # UNSEEN shows up when a new message exists but otherwise doesn't appear
+    #new_emails=$(curl $mailsource -u $username:$password -X "EXAMINE $mailbox" 2>&1 | grep -o '[0-9]\+\s*EXISTS' | awk '{print $1}')
+    new_emails=$(curl $mailsource -u $username:$password -X "EXAMINE $mailbox" 2>&1 | grep -o 'UNSEEN\s*[0-9]\+' | awk '{print $2}')
 
     account_key=$(sanitize_key "$account")
     if [[ -n "$new_emails" ]]; then
@@ -108,6 +111,9 @@ for i in "${!mailsources[@]}"; do
         new_messages[total]=$((new_messages[total] + new_emails))
         new_messages[$account_key]=$new_emails
     elif [[ "$new_emails" == "0" ]]; then
+        echo "> No new messages."
+        new_messages[$account_key]=0
+    elif [[ "$new_emails" == "" ]]; then
         echo "> No new messages."
         new_messages[$account_key]=0
     else

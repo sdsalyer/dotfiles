@@ -1,0 +1,18 @@
+// -*- mode: jsonc -*-
+
+// Clock module
+{
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}",
+        "calendar": {
+            "format": {
+                "months":     "<span color='#5f2896'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weekdays":   "<span color='#5f2896'>{}</span>",
+                "today":      "<span color='#5f2896'><b><u>{}</u></b></span>"
+            }
+        },
+    },
+}

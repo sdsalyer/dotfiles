@@ -1,0 +1,43 @@
+// -*- mode: jsonc -*-
+
+// Secondary bar config
+{
+  "include": [
+    "~/.config/waybar/modules/sway-workspaces.jsonc",
+    "~/.config/waybar/modules/sway-mode.jsonc",
+    "~/.config/waybar/modules/sway-window.jsonc",
+    "~/.config/waybar/modules/custom-pacman.jsonc",
+    "~/.config/waybar/modules/custom-email.jsonc",
+    "~/.config/waybar/modules/group-hardware.jsonc",
+    "~/.config/waybar/modules/group-power.jsonc",
+    "~/.config/waybar/modules/bluetooth.jsonc",
+    "~/.config/waybar/modules/backlight.jsonc",
+    "~/.config/waybar/modules/pulseaudio.jsonc",
+    "~/.config/waybar/modules/tray.jsonc",
+    "~/.config/waybar/modules/clock.jsonc",
+  ],
+
+    // Module placement -----------------------
+    "modules-left": [
+        "sway/workspaces", 
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        //"custom/pacman",
+        // "custom/email",
+        "bluetooth",
+        //"backlight",
+        "pulseaudio",
+        "group/hardware",
+        //"disk#root",
+        //"disk#home",
+        // "group/power",
+        //"power-profiles-daemon",
+        //"battery", 
+        "tray",
+        "clock"
+    ],
+}

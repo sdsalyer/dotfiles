@@ -1,0 +1,8 @@
+// -*- mode: jsonc -*-
+
+// Sway mode (resize indicator, etc.)
+{
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+}

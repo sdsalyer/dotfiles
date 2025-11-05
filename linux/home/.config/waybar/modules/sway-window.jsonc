@@ -1,0 +1,14 @@
+// -*- mode: jsonc -*-
+
+// Sway window module
+{
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "rewrite": {
+            "(.*) — Firefox.*": " $1",
+            "(org\\.pwmt\\.)?zathura": "Zathura"
+        }
+    },
+}
