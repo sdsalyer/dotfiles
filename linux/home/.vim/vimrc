@@ -1,0 +1,5 @@
+source ~/.vim/options.vim
+source ~/.vim/remaps.vim
+source ~/.vim/plugins.vim
+source ~/.vim/colors.vim
+source ~/.vim/plugin.fzf.vim
