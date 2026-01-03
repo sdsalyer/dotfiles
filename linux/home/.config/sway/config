@@ -37,7 +37,7 @@ set $emoji bemoji --noline
 set $colorpicker grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | wl-copy
 #set $background ~/Pictures/wallpapers_ml4w/sunset-mountain-beautiful.jpg
 #set $background /home/berts/Pictures/wallpapers/wallhaven-yxlwyd.jpg
-set $term alacritty
+set $term alacritty -o "window.dimensions.lines=24" -o "window.dimensions.columns=80"
 #set $filemanager dolphin
 set $filemanager pcmanfm-qt
 set $wallpaper ~/.config/sway/swww-dmenu.sh
@@ -463,7 +463,7 @@ exec_always ~/.config/sway/swww.sh
 for_window [shell="xwayland"] title_format "[xway] %title"
 
 # Float Save As and Extension windows
-for_window [app_id="^(firefox-developer-edition|thorium-browser)$" title="^(Open|Save|Extension).*$"] {
+for_window [app_id="^(zen|firefox-developer-edition|thorium-browser)$" title="^(Open|Save|Extension).*$"] {
     floating enable
     focus
     resize set width 60 ppt height 70 ppt
@@ -525,9 +525,22 @@ for_window [app_id="^(pico|voxa)tron(_dyn)?"] {
     border pixel 2
 }
 
+# swappy (clipboard image edit)
+for_window [app_id="swappy"] {
+    floating enable
+    focus
+    resize set width 60 ppt height 70 ppt
+    border pixel 2
+}
+
+# Prevent idle when playing steam game
+# inhibit_idle focus|fullscreen|open|none|visible
+for_window [class="^steam_app_\d+$"] inhibit_idle focus
+
 
 # keep x on workspace n
-for_window [app_id="^firefox-developer-edition$"] move container to workspace 1
+#for_window [app_id="^firefox-developer-edition$"] move container to workspace 1
+for_window [app_id="^zen$"] move container to workspace 1
 for_window [app_id="^org.gajim.Gajim$"] move container to workspace 2
 
 exec_always ~/.config/sway/waybar.sh
