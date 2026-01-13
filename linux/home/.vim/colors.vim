@@ -2,6 +2,10 @@
 " draw a line at column
 set colorcolumn=81,121 " ,161,241,321,401,481,561,641,721,801"
 
+" changes the cursor depending on mode
+let &t_SI = "\e[6 q"  " SI = Start Insert mode (beam)
+let &t_EI = "\e[2 q"  " EI = End Insert mode (block)
+
 set t_Co=256
 set background=dark
 " Solarized
